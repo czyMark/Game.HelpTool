@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C9197558-CE98-4070-9250-A3C1E5091A21}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Game.HelpTool</RootNamespace>
+    <AssemblyName>Game.HelpTool</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AipSdk, Version=3.6.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AipSdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entity\BaiduApiResult.cs" />
+    <Compile Include="Entity\OperationScriptInfo.cs" />
+    <Compile Include="Entity\ScriptWhereInfo.cs" />
+    <Compile Include="ImageDisposal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageDisposal.Designer.cs">
+      <DependentUpon>ImageDisposal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainTool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainTool.Designer.cs">
+      <DependentUpon>MainTool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\OperationScript.cs" />
+    <Compile Include="GetWindowPix.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetWindowPix.Designer.cs">
+      <DependentUpon>GetWindowPix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScreenBody.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScreenBody.designer.cs">
+      <DependentUpon>ScreenBody.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WhereScriptInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WhereScriptInfo.Designer.cs">
+      <DependentUpon>WhereScriptInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tool\BaiduApiHelp.cs" />
+    <Compile Include="Tool\CaptureScreenImage.cs" />
+    <Compile Include="Tool\KeyboardHook.cs" />
+    <Compile Include="Tool\LogFile.cs" />
+    <Compile Include="Tool\MouseHook.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScriptInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScriptInfo.Designer.cs">
+      <DependentUpon>ScriptInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\ScriptModel.cs" />
+    <Compile Include="Tool\SendChartConvert.cs" />
+    <Compile Include="Tool\User32Api.cs" />
+    <Compile Include="Tool\Win32Api.cs" />
+    <EmbeddedResource Include="ImageDisposal.resx">
+      <DependentUpon>ImageDisposal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainTool.resx">
+      <DependentUpon>MainTool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetWindowPix.resx">
+      <DependentUpon>GetWindowPix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ScreenBody.resx">
+      <DependentUpon>ScreenBody.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WhereScriptInfo.resx">
+      <DependentUpon>WhereScriptInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScriptInfo.resx">
+      <DependentUpon>ScriptInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo.ico" />
+    <Content Include="dll\user32.dll" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
