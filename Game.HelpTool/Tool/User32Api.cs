@@ -8,6 +8,7 @@ using System.Windows.Forms;
 
 namespace Game.HelpTool
 {
+    //User32 封装
     public static class User32Api
     {
         #region 模拟鼠标触发

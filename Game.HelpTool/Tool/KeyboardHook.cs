@@ -7,6 +7,7 @@ using System.Windows.Forms;
 
 namespace Game.HelpTool
 { 
+    //键盘钩子
     class KeyboardHook
     {
 

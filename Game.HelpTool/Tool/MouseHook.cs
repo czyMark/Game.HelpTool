@@ -8,6 +8,7 @@ using System.Windows.Forms;
 
 namespace Game.HelpTool
 {
+    //鼠标钩子
     public class MouseHook
     {
         private Point point;

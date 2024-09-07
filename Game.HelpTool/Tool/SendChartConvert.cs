@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Game.HelpTool
 {
+    //发送的文字转换类
     public static class SendChartConvert
     {
         public static Dictionary<string, string> ChartStr = new Dictionary<string, string>() {

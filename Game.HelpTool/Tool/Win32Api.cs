@@ -6,6 +6,7 @@ using System.Text;
 
 namespace Game.HelpTool
 {
+    //win32封装
     public class Win32Api
     {
         [StructLayout(LayoutKind.Sequential)]

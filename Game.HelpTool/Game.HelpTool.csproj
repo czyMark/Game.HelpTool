@@ -8,15 +8,30 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Game.HelpTool</RootNamespace>
     <AssemblyName>Game.HelpTool</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -36,6 +51,27 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resource\logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AipSdk, Version=3.6.11.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -43,6 +79,12 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.License, Version=1.4.0.20, Culture=neutral, PublicKeyToken=b1144360237c8b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.OCR.1.8.0\lib\net20\Spire.License.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.OCR, Version=1.8.0.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.OCR.1.8.0\lib\net20\Spire.OCR.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -54,66 +96,81 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Tesseract, Version=4.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tesseract.4.1.1\lib\net45\Tesseract.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity\BaiduApiResult.cs" />
+    <Compile Include="Entity\DataEnum.cs" />
     <Compile Include="Entity\OperationScriptInfo.cs" />
-    <Compile Include="Entity\ScriptWhereInfo.cs" />
-    <Compile Include="ImageDisposal.cs">
+    <Compile Include="Tool\ColorConvertHelper.cs" />
+    <Compile Include="Tool\DeepCopy.cs" />
+    <Compile Include="WindowUI\EditScriptNode.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ImageDisposal.Designer.cs">
-      <DependentUpon>ImageDisposal.cs</DependentUpon>
+    <Compile Include="WindowUI\EditScriptNode.Designer.cs">
+      <DependentUpon>EditScriptNode.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainTool.cs">
+    <Compile Include="WindowUI\EditText.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainTool.Designer.cs">
+    <Compile Include="WindowUI\EditText.Designer.cs">
+      <DependentUpon>EditText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowUI\MainTool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowUI\MainTool.Designer.cs">
       <DependentUpon>MainTool.cs</DependentUpon>
     </Compile>
     <Compile Include="Entity\OperationScript.cs" />
-    <Compile Include="GetWindowPix.cs">
+    <Compile Include="WindowUI\GetWindowPix.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GetWindowPix.Designer.cs">
+    <Compile Include="WindowUI\GetWindowPix.Designer.cs">
       <DependentUpon>GetWindowPix.cs</DependentUpon>
     </Compile>
-    <Compile Include="ScreenBody.cs">
+    <Compile Include="WindowUI\ScreenBody.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ScreenBody.designer.cs">
+    <Compile Include="WindowUI\ScreenBody.designer.cs">
       <DependentUpon>ScreenBody.cs</DependentUpon>
     </Compile>
-    <Compile Include="WhereScriptInfo.cs">
+    <Compile Include="Tool\RecognizeImage.cs" />
+    <Compile Include="Tool\BaiduApiHelp.cs" />
+    <Compile Include="WindowUI\WhereScriptInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WhereScriptInfo.Designer.cs">
+    <Compile Include="WindowUI\WhereScriptInfo.Designer.cs">
       <DependentUpon>WhereScriptInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tool\BaiduApiHelp.cs" />
     <Compile Include="Tool\CaptureScreenImage.cs" />
     <Compile Include="Tool\KeyboardHook.cs" />
     <Compile Include="Tool\LogFile.cs" />
     <Compile Include="Tool\MouseHook.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScriptInfo.cs">
+    <Compile Include="WindowUI\ScriptInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ScriptInfo.Designer.cs">
+    <Compile Include="WindowUI\ScriptInfo.Designer.cs">
       <DependentUpon>ScriptInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Entity\ScriptModel.cs" />
     <Compile Include="Tool\SendChartConvert.cs" />
     <Compile Include="Tool\User32Api.cs" />
     <Compile Include="Tool\Win32Api.cs" />
-    <EmbeddedResource Include="ImageDisposal.resx">
-      <DependentUpon>ImageDisposal.cs</DependentUpon>
+    <EmbeddedResource Include="WindowUI\EditScriptNode.resx">
+      <DependentUpon>EditScriptNode.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainTool.resx">
+    <EmbeddedResource Include="WindowUI\EditText.resx">
+      <DependentUpon>EditText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowUI\MainTool.resx">
       <DependentUpon>MainTool.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GetWindowPix.resx">
+    <EmbeddedResource Include="WindowUI\GetWindowPix.resx">
       <DependentUpon>GetWindowPix.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -126,16 +183,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ScreenBody.resx">
+    <EmbeddedResource Include="WindowUI\ScreenBody.resx">
       <DependentUpon>ScreenBody.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WhereScriptInfo.resx">
+    <EmbeddedResource Include="WindowUI\WhereScriptInfo.resx">
       <DependentUpon>WhereScriptInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ScriptInfo.resx">
+    <EmbeddedResource Include="WindowUI\ScriptInfo.resx">
       <DependentUpon>ScriptInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.config" />
+    <None Include="Config\app.config" />
+    <None Include="Config\packages.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -148,9 +206,25 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="logo.ico" />
-    <Content Include="dll\user32.dll" />
+    <Content Include="DLL\AspriseOCR.dll" />
+    <Content Include="DLL\DevIL.dll" />
+    <Content Include="DLL\ILU.dll" />
+    <Content Include="Resource\logo.ico" />
+    <Content Include="DLL\user32.dll" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Tesseract.4.1.1\build\Tesseract.targets" Condition="Exists('..\packages\Tesseract.4.1.1\build\Tesseract.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Tesseract.4.1.1\build\Tesseract.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Tesseract.4.1.1\build\Tesseract.targets'))" />
+  </Target>
 </Project>
