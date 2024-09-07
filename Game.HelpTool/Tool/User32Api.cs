@@ -75,5 +75,37 @@ namespace Game.HelpTool
 
         [DllImport("User32.dll")]
         public extern static System.IntPtr GetDC(System.IntPtr hWnd);
+
+
+        /// <summary>
+        /// 获取当前真实的屏幕分辨率
+        /// </summary>
+        /// <returns></returns>
+        public static Size GetRealScreenResolution()
+        {
+            Graphics g = Graphics.FromHwnd(IntPtr.Zero);
+            IntPtr desktopDC = g.GetHdc();
+
+            int PixelsX = GetDeviceCaps(desktopDC, 8); // 水平分辨率
+            int PixelsY = GetDeviceCaps(desktopDC, 10); // 垂直分辨率
+
+            g.ReleaseHdc(desktopDC);
+            g.Dispose();
+
+            // 如果系统使用120 DPI或更高，需要调整分辨率
+            int dpi = (int)Graphics.FromHwnd(IntPtr.Zero).DpiX;
+            if (dpi > 96)
+            {
+                float scaleFactor = dpi / 96f; // 100% would be 96 DPI, 125% would be 120 DPI, etc.
+                PixelsX = (int)(PixelsX / scaleFactor);
+                PixelsY = (int)(PixelsY / scaleFactor);
+            }
+
+            return new Size(PixelsX, PixelsY);
+        }
+
+        [System.Runtime.InteropServices.DllImport("gdi32.dll")]
+        private static extern int GetDeviceCaps(IntPtr hdc, int Index);
+
     }
 }

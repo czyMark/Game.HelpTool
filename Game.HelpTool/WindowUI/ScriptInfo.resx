@@ -123,10 +123,14 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 26</value>
+    <value>8, 39</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 12</value>
+    <value>98, 18</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -147,10 +151,13 @@
     <value>14</value>
   </data>
   <data name="ScriptNameTxt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>77, 22</value>
+    <value>116, 33</value>
+  </data>
+  <data name="ScriptNameTxt.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="ScriptNameTxt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 21</value>
+    <value>355, 28</value>
   </data>
   <data name="ScriptNameTxt.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -174,10 +181,13 @@
     <value>TopCenter</value>
   </data>
   <data name="ScriptStateBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>77, 104</value>
+    <value>116, 156</value>
+  </data>
+  <data name="ScriptStateBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="ScriptStateBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 16</value>
+    <value>124, 22</value>
   </data>
   <data name="ScriptStateBox.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -200,15 +210,17 @@
   <data name="&gt;&gt;ScriptStateBox.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ConfirmBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="ConfirmBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>55, 149</value>
+    <value>82, 224</value>
+  </data>
+  <data name="ConfirmBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="ConfirmBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>112, 34</value>
   </data>
   <data name="ConfirmBtn.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -229,10 +241,13 @@
     <value>11</value>
   </data>
   <data name="ExitBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>189, 149</value>
+    <value>284, 224</value>
+  </data>
+  <data name="ExitBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="ExitBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>112, 34</value>
   </data>
   <data name="ExitBtn.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -253,10 +268,13 @@
     <value>10</value>
   </data>
   <data name="ScriptOrderTxt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>77, 49</value>
+    <value>116, 74</value>
+  </data>
+  <data name="ScriptOrderTxt.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="ScriptOrderTxt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 21</value>
+    <value>355, 28</value>
   </data>
   <data name="ScriptOrderTxt.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -280,10 +298,13 @@
     <value>True</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 53</value>
+    <value>8, 80</value>
+  </data>
+  <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 12</value>
+    <value>98, 18</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -307,10 +328,13 @@
     <value>True</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 80</value>
+    <value>8, 120</value>
+  </data>
+  <data name="label3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 12</value>
+    <value>116, 18</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -330,14 +354,14 @@
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="SX.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="SX.Location" type="System.Drawing.Point, System.Drawing">
-    <value>77, 76</value>
+    <value>116, 114</value>
+  </data>
+  <data name="SX.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="SX.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 21</value>
+    <value>156, 28</value>
   </data>
   <data name="SX.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -354,14 +378,14 @@
   <data name="&gt;&gt;SX.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="SY.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="SY.Location" type="System.Drawing.Point, System.Drawing">
-    <value>211, 76</value>
+    <value>316, 114</value>
+  </data>
+  <data name="SY.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="SY.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 21</value>
+    <value>154, 28</value>
   </data>
   <data name="SY.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -382,10 +406,13 @@
     <value>True</value>
   </data>
   <data name="WaitWhereRadio.Location" type="System.Drawing.Point, System.Drawing">
-    <value>77, 104</value>
+    <value>116, 156</value>
+  </data>
+  <data name="WaitWhereRadio.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="WaitWhereRadio.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 16</value>
+    <value>168, 22</value>
   </data>
   <data name="WaitWhereRadio.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -415,10 +442,13 @@
     <value>NoControl</value>
   </data>
   <data name="BeforeExecWhereRadio.Location" type="System.Drawing.Point, System.Drawing">
-    <value>77, 126</value>
+    <value>116, 189</value>
+  </data>
+  <data name="BeforeExecWhereRadio.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="BeforeExecWhereRadio.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 16</value>
+    <value>168, 22</value>
   </data>
   <data name="BeforeExecWhereRadio.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -448,10 +478,13 @@
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>188, 80</value>
+    <value>282, 120</value>
+  </data>
+  <data name="label4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>17, 12</value>
+    <value>26, 18</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -472,10 +505,13 @@
     <value>0</value>
   </data>
   <data name="ScriptNumTxt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>211, 125</value>
+    <value>316, 188</value>
+  </data>
+  <data name="ScriptNumTxt.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="ScriptNumTxt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 21</value>
+    <value>154, 28</value>
   </data>
   <data name="ScriptNumTxt.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -493,13 +529,19 @@
     <value>4</value>
   </data>
   <data name="SecondNumTxt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>211, 101</value>
+    <value>316, 152</value>
+  </data>
+  <data name="SecondNumTxt.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="SecondNumTxt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 21</value>
+    <value>154, 28</value>
   </data>
   <data name="SecondNumTxt.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
+  </data>
+  <data name="SecondNumTxt.Text" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;SecondNumTxt.Name" xml:space="preserve">
     <value>SecondNumTxt</value>
@@ -517,10 +559,10 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 12</value>
+    <value>9, 18</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>329, 176</value>
+    <value>494, 264</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1002,6 +1044,9 @@
         /gAAAAD///////////////+AAAAD////////////////8AAAH/////////////////wAAH//////////
         //////////////////8=
 </value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>

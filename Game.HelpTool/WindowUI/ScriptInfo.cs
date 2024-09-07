@@ -21,8 +21,13 @@ namespace Game.HelpTool
         public ScriptInfo(double scriptOrder)
         {
             InitializeComponent();
-            SX.Text = Screen.PrimaryScreen.Bounds.Width.ToString();
-            SY.Text = Screen.PrimaryScreen.Bounds.Height.ToString();
+            Screen screen = Screen.PrimaryScreen;
+            Rectangle bounds = screen.Bounds;
+            int width = bounds.Width;
+            int height = bounds.Height;
+
+            SX.Text = width.ToString();
+            SY.Text = height.ToString();
             ScriptState = ScriptTypeData.ScriptExecNone;
             ExecOrWhere = false;
             ScriptOrderTxt.Text = scriptOrder.ToString();
@@ -47,12 +52,12 @@ namespace Game.HelpTool
                 ExecOrWhere = false;
                 ScriptStateBox.Checked = false;
             }
-            if (scriptState == ScriptTypeData.ScriptExecRepeat)
+           else if (scriptState == ScriptTypeData.ScriptExecRepeat)
             {
                 ExecOrWhere = false;
                 ScriptStateBox.Checked = true;
             }
-            if (scriptState == ScriptTypeData.ScriptWhereBefore)
+            else if (scriptState == ScriptTypeData.ScriptWhereBefore)
             {
                 ExecOrWhere = true;
                 WaitWhereRadio.Visible = true;
@@ -65,7 +70,7 @@ namespace Game.HelpTool
                 SecondNumTxt.Visible = true;
                 ScriptNumTxt.Visible = true;
             }
-            if (scriptState == ScriptTypeData.ScriptWhereWait)
+            else if(scriptState == ScriptTypeData.ScriptWhereWait)
             {
                 ExecOrWhere = true;
                 WaitWhereRadio.Visible = true;

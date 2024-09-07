@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Game.HelpTool</RootNamespace>
     <AssemblyName>Game.HelpTool</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
@@ -192,6 +192,7 @@
     <EmbeddedResource Include="WindowUI\ScriptInfo.resx">
       <DependentUpon>ScriptInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Config\app.config" />
     <None Include="Config\packages.config" />
     <None Include="packages.config" />

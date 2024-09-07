@@ -1286,7 +1286,7 @@ namespace Game.HelpTool
         /// <param name="colorWhere">增加的是否是颜色条件</param>
         private void AddWhereScript(bool colorWhere)
         {
-            ScriptInfo si = new ScriptInfo("", (MaxScriptOrder + 1).ToString(), ScriptTypeData.ScriptWhereWait, Screen.PrimaryScreen.Bounds.Width.ToString(), Screen.PrimaryScreen.Bounds.Height.ToString(), ExceScriptStateValue);
+            ScriptInfo si = new ScriptInfo("", (MaxScriptOrder + 1).ToString(), ScriptTypeData.ScriptWhereWait, Screen.PrimaryScreen.Bounds.Width.ToString(), Screen.PrimaryScreen.Bounds.Height.ToString(),"1");
             if (si.ShowDialog() != DialogResult.OK)
             {
                 return;
@@ -1302,13 +1302,13 @@ namespace Game.HelpTool
             OSI.ScriptStateExecValue = si.WhereExecValue;
 
             this.Hide();
-
+             
             //截取当前屏幕
-            Image img = new Bitmap(Screen.AllScreens[0].Bounds.Width, Screen.AllScreens[0].Bounds.Height);
-            Graphics g = Graphics.FromImage(img);
-            g.CopyFromScreen(new Point(0, 0), new Point(0, 0), Screen.AllScreens[0].Bounds.Size);
+            Image img = new Bitmap(si.SXWidth, si.SYHeight);
+            Graphics g = Graphics.FromImage(img); 
+            g.CopyFromScreen(new Point(0, 0), new Point(0, 0), new Size(si.SXWidth, si.SYHeight));
             IntPtr dc = g.GetHdc();
-            g.ReleaseHdc(dc);
+            g.ReleaseHdc(dc); 
             ScreenBody screenbody = new ScreenBody(colorWhere);
             screenbody.BackgroundImage = img;
             //body.Parent = this;

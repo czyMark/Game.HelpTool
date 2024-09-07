@@ -16,7 +16,7 @@ namespace Game.HelpTool
         /// <param name="selectModel">true是point模式 false是矩形选择模式</param>
         public ScreenBody(bool selectModel)
         {
-            InitializeComponent();
+            InitializeComponent(); 
             this.SelectModel = selectModel;
         }
 
@@ -35,7 +35,7 @@ namespace Game.HelpTool
         int TmpX;
         int TmpY;
 
-        private void DrawRect(Graphics Painter, int Mouse_x, int Mouse_y)
+        private void MoveDrawRect(Graphics Painter, int Mouse_x, int Mouse_y)
         {
             int width = 0;
             int heigth = 0;
@@ -87,7 +87,7 @@ namespace Game.HelpTool
         private Image DrawScreen(Image back, int Mouse_x, int Mouse_y)
         {
             Graphics Painter = Graphics.FromImage(back);
-            DrawRect(Painter, Mouse_x, Mouse_y);
+            MoveDrawRect(Painter, Mouse_x, Mouse_y);
             return back;
         }
 
@@ -244,11 +244,15 @@ namespace Game.HelpTool
         /// <param name="e"></param>
         private void ScreenBody_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            //this.WindowState = FormWindowState.Maximized;
+            this.Left = 0;
+            this.Top = 0;
+            this.Width = this.BackgroundImage.Width;
+            this.Height = this.BackgroundImage.Height;
+            BaseImage = this.BackgroundImage;
             MainPainter = this.CreateGraphics();
             DrawPen = new Pen(Brushes.Blue);
             IsDowned = false;
-            BaseImage = this.BackgroundImage;
             Rect = new Rectangle();
             RectReady = false;
             DrawChange = false;
@@ -289,25 +293,25 @@ namespace Game.HelpTool
                 WhereScript.KeyState = KeyStateData.KeyNone;
                 WhereScript.MouseState = MouseStateData.MouseNone;
                 WhereScript.RunTime = DateTime.Now.ToString("yyyy年MM月dd日 HH:mm:ss.fff");
-                string imgStr = string.Empty;
+                string whereStr = string.Empty;
                 if (!SelectModel)
                 {
                     WhereScript.OperationState = OperationStateData.OperationRectWhere;
-                    imgStr = RecognizeImage.SpireRecognize(CaptureScreenImage.CaptureScreen(Rect.X+1, Rect.Y + 1, Rect.Size.Width, Rect.Size.Height));
+                    whereStr = RecognizeImage.SpireRecognize(CaptureScreenImage.CaptureScreen(Rect.X+1, Rect.Y + 1, Rect.Size.Width, Rect.Size.Height));
                 }
                 else
                 {
                     WhereScript.OperationState = OperationStateData.OperationPointWhere;
-                    Bitmap img = new Bitmap(Screen.AllScreens[0].Bounds.Width, Screen.AllScreens[0].Bounds.Height);
+                    Bitmap img = new Bitmap(BaseImage.Width, BaseImage.Height);
                     Graphics g = Graphics.FromImage(img);
-                    g.CopyFromScreen(new Point(0, 0), new Point(0, 0), Screen.AllScreens[0].Bounds.Size);
+                    g.CopyFromScreen(new Point(0, 0), new Point(0, 0),new Size(BaseImage.Width, BaseImage.Height));
                     IntPtr dc = g.GetHdc();
                     g.ReleaseHdc(dc);
-                    imgStr = ColorConvertHelper.ColorToHex(img.GetPixel(Rect.X, Rect.Y));
+                    whereStr = ColorConvertHelper.ColorToHex(img.GetPixel(Rect.X, Rect.Y));
                 }
 
                 //选择条件操作
-                WhereScriptInfo whereScript = new WhereScriptInfo(imgStr);
+                WhereScriptInfo whereScript = new WhereScriptInfo(whereStr);
                 if (whereScript.ShowDialog() == DialogResult.OK)
                 {
                     WhereScript.K = whereScript.WhereValue;
@@ -329,9 +333,7 @@ namespace Game.HelpTool
 
 
         private void ChangeRect(Image image, int Position_x, int Position_y, ChangeSide Side)
-        {
-            int width = 0;
-            int height = 0;
+        { 
             Graphics Painter = Graphics.FromImage(image);
             switch (Side)
             {
